@@ -1,9 +1,10 @@
 #!/bin/sh
 set -e
 
-echo "duydl>> start cd project"
-cd $CI_PROJECT_FILE_PATH
-echo "duydl>> end cd project"
+echo "duydl>> Danh sách file trong thư mục hiện tại:"
+ls -la
+echo "CI_WORKSPACE: $CI_WORKSPACE"
+echo "CI_DERIVED_DATA_PATH: $CI_DERIVED_DATA_PATH"
 
 xcodebuild test \
 -project DemoXcodeCloud.xcodeproj \
