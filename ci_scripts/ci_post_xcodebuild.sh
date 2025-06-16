@@ -17,7 +17,8 @@ xcodebuild test \
 if ! command -v slather &> /dev/null; then
     echo "duydl>> Install slather"
     # bundle install
-    brew install slather
+    gem install slather
+    #brew install slather
 fi
 
 slather coverage --sonarqube-xml
