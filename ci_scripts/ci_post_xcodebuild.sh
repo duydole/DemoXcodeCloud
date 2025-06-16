@@ -1,6 +1,10 @@
 #!/bin/sh
 set -e
 
+echo "duydl>> start cd project"
+cd $CI_PROJECT_FILE_PATH
+echo "duydl>> end cd project"
+
 xcodebuild test \
 -project DemoXcodeCloud.xcodeproj \
 -scheme DemoXcodeCloud \
