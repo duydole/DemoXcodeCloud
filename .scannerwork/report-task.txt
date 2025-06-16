@@ -1,0 +1,7 @@
+organization=duydole
+projectKey=duydole_DemoXcodeCloud
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.64410
+dashboardUrl=https://sonarcloud.io/dashboard?id=duydole_DemoXcodeCloud
+ceTaskId=AZd3ll31dBvXHyO914OH
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AZd3ll31dBvXHyO914OH

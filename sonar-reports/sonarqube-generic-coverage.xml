@@ -104,7 +104,6 @@
     <lineToCover lineNumber="144" covered="false"/>
     <lineToCover lineNumber="145" covered="false"/>
     <lineToCover lineNumber="146" covered="false"/>
-    <lineToCover lineNumber="147" covered="false"/>
   </file>
   <file path="../../../../Library/Developer/Xcode/DerivedData/DemoXcodeCloud-fhxvglqcjzdfwpekcmkyhfmquyay/Build/Intermediates.noindex/DemoXcodeCloud.build/Debug-iphonesimulator/DemoXcodeCloud.build/DerivedSources/GeneratedAssetSymbols.swift">
     <lineToCover lineNumber="90" covered="false"/>
