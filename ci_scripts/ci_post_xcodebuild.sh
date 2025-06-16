@@ -6,6 +6,8 @@ ls -la
 echo "CI_WORKSPACE: $CI_WORKSPACE"
 echo "CI_DERIVED_DATA_PATH: $CI_DERIVED_DATA_PATH"
 
+cd $CI_PRIMARY_REPOSITORY_PATH
+
 xcodebuild test \
 -project DemoXcodeCloud.xcodeproj \
 -scheme DemoXcodeCloud \
