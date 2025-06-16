@@ -11,7 +11,7 @@ cd $CI_PRIMARY_REPOSITORY_PATH
 xcodebuild test \
 -project DemoXcodeCloud.xcodeproj \
 -scheme DemoXcodeCloud \
--destination 'platform=iOS Simulator,OS=18.2,name=iPhone 15 Pro' \
+-destination 'platform=iOS Simulator,OS=18.3.1,name=iPhone 16' \
 -enableCodeCoverage YES
 
 if ! command -v slather &> /dev/null; then
