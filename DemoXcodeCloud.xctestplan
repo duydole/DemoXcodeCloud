@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "324AC084-B2E1-442D-AC17-5788B9EC9F48",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:DemoXcodeCloud.xcodeproj",
+      "identifier" : "F2A728C42DB6194C00FE2DFE",
+      "name" : "DemoXcodeCloud"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:DemoXcodeCloud.xcodeproj",
+        "identifier" : "F2A728D42DB6194E00FE2DFE",
+        "name" : "DemoXcodeCloudTests"
+      }
+    }
+  ],
+  "version" : 1
+}

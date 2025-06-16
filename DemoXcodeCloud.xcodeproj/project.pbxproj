@@ -17,6 +17,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F289FB2D2DFFFB2400A90CF9 /* DemoXcodeCloud.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = DemoXcodeCloud.xctestplan; sourceTree = "<group>"; };
 		F2A728C52DB6194D00FE2DFE /* DemoXcodeCloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoXcodeCloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2A728D52DB6194E00FE2DFE /* DemoXcodeCloudTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoXcodeCloudTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -30,11 +31,6 @@
 		F2A728D82DB6194E00FE2DFE /* DemoXcodeCloudTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = DemoXcodeCloudTests;
-			sourceTree = "<group>";
-		};
-		F2A728E22DB6194E00FE2DFE /* DemoXcodeCloudUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = DemoXcodeCloudUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -60,9 +56,9 @@
 		F2A728BC2DB6194C00FE2DFE = {
 			isa = PBXGroup;
 			children = (
+				F289FB2D2DFFFB2400A90CF9 /* DemoXcodeCloud.xctestplan */,
 				F2A728C72DB6194D00FE2DFE /* DemoXcodeCloud */,
 				F2A728D82DB6194E00FE2DFE /* DemoXcodeCloudTests */,
-				F2A728E22DB6194E00FE2DFE /* DemoXcodeCloudUITests */,
 				F2A728C62DB6194D00FE2DFE /* Products */,
 			);
 			sourceTree = "<group>";
