@@ -14,19 +14,11 @@
 			remoteGlobalIDString = F2A728C42DB6194C00FE2DFE;
 			remoteInfo = DemoXcodeCloud;
 		};
-		F2A728E02DB6194E00FE2DFE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F2A728BD2DB6194C00FE2DFE /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F2A728C42DB6194C00FE2DFE;
-			remoteInfo = DemoXcodeCloud;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		F2A728C52DB6194D00FE2DFE /* DemoXcodeCloud.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoXcodeCloud.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2A728D52DB6194E00FE2DFE /* DemoXcodeCloudTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoXcodeCloudTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2A728DF2DB6194E00FE2DFE /* DemoXcodeCloudUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoXcodeCloudUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -62,13 +54,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F2A728DC2DB6194E00FE2DFE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -87,7 +72,6 @@
 			children = (
 				F2A728C52DB6194D00FE2DFE /* DemoXcodeCloud.app */,
 				F2A728D52DB6194E00FE2DFE /* DemoXcodeCloudTests.xctest */,
-				F2A728DF2DB6194E00FE2DFE /* DemoXcodeCloudUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,29 +124,6 @@
 			productReference = F2A728D52DB6194E00FE2DFE /* DemoXcodeCloudTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		F2A728DE2DB6194E00FE2DFE /* DemoXcodeCloudUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F2A728EF2DB6194E00FE2DFE /* Build configuration list for PBXNativeTarget "DemoXcodeCloudUITests" */;
-			buildPhases = (
-				F2A728DB2DB6194E00FE2DFE /* Sources */,
-				F2A728DC2DB6194E00FE2DFE /* Frameworks */,
-				F2A728DD2DB6194E00FE2DFE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F2A728E12DB6194E00FE2DFE /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				F2A728E22DB6194E00FE2DFE /* DemoXcodeCloudUITests */,
-			);
-			name = DemoXcodeCloudUITests;
-			packageProductDependencies = (
-			);
-			productName = DemoXcodeCloudUITests;
-			productReference = F2A728DF2DB6194E00FE2DFE /* DemoXcodeCloudUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -177,10 +138,6 @@
 						CreatedOnToolsVersion = 16.2;
 					};
 					F2A728D42DB6194E00FE2DFE = {
-						CreatedOnToolsVersion = 16.2;
-						TestTargetID = F2A728C42DB6194C00FE2DFE;
-					};
-					F2A728DE2DB6194E00FE2DFE = {
 						CreatedOnToolsVersion = 16.2;
 						TestTargetID = F2A728C42DB6194C00FE2DFE;
 					};
@@ -202,7 +159,6 @@
 			targets = (
 				F2A728C42DB6194C00FE2DFE /* DemoXcodeCloud */,
 				F2A728D42DB6194E00FE2DFE /* DemoXcodeCloudTests */,
-				F2A728DE2DB6194E00FE2DFE /* DemoXcodeCloudUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -216,13 +172,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F2A728D32DB6194E00FE2DFE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F2A728DD2DB6194E00FE2DFE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -246,13 +195,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F2A728DB2DB6194E00FE2DFE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -260,11 +202,6 @@
 			isa = PBXTargetDependency;
 			target = F2A728C42DB6194C00FE2DFE /* DemoXcodeCloud */;
 			targetProxy = F2A728D62DB6194E00FE2DFE /* PBXContainerItemProxy */;
-		};
-		F2A728E12DB6194E00FE2DFE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F2A728C42DB6194C00FE2DFE /* DemoXcodeCloud */;
-			targetProxy = F2A728E02DB6194E00FE2DFE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -393,10 +330,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DemoXcodeCloud/Preview Content\"";
-				DEVELOPMENT_TEAM = XY8FSD2973;
+				DEVELOPMENT_TEAM = 68286ZFM2K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -404,13 +342,15 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.livepayments.DemoXcodeCloud;
+				PRODUCT_BUNDLE_IDENTIFIER = com.livepayments.TestXcodeCloud456;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -422,10 +362,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DemoXcodeCloud/Preview Content\"";
-				DEVELOPMENT_TEAM = XY8FSD2973;
+				DEVELOPMENT_TEAM = 68286ZFM2K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -433,13 +374,15 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.livepayments.DemoXcodeCloud;
+				PRODUCT_BUNDLE_IDENTIFIER = com.livepayments.TestXcodeCloud456;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -484,40 +427,6 @@
 			};
 			name = Release;
 		};
-		F2A728F02DB6194E00FE2DFE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XY8FSD2973;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.livepayments.DemoXcodeCloudUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DemoXcodeCloud;
-			};
-			name = Debug;
-		};
-		F2A728F12DB6194E00FE2DFE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = XY8FSD2973;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.livepayments.DemoXcodeCloudUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = DemoXcodeCloud;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -544,15 +453,6 @@
 			buildConfigurations = (
 				F2A728ED2DB6194E00FE2DFE /* Debug */,
 				F2A728EE2DB6194E00FE2DFE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F2A728EF2DB6194E00FE2DFE /* Build configuration list for PBXNativeTarget "DemoXcodeCloudUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F2A728F02DB6194E00FE2DFE /* Debug */,
-				F2A728F12DB6194E00FE2DFE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
