@@ -16,15 +16,6 @@ SCHEME="DemoXcodeCloud"
 PRODUCT_NAME="DemoXcodeCloud"
 PROJECT_NAME="DemoXcodeCloud"
 
-# # Extract app version using agvtool
-# APP_VERSION=$(agvtool what-marketing-version -terse1 || { echo "ERROR: Failed to retrieve APP_VERSION"; exit 1; })
-
-# # Verify APP_VERSION
-# if [[ -z "$APP_VERSION" ]]; then
-#   echo "ERROR: APP_VERSION is empty"
-#   exit 1
-# fi
-# echo "App Version: $APP_VERSION"
 
 # Clean, build, and test project
 xcodebuild \
@@ -36,18 +27,18 @@ xcodebuild \
 -resultBundlePath DerivedData/Logs/Test/ResultBundle.xcresult \
 clean build test
 
-# # find profdata and binary
-# PROFDATA=$(find . -name "Coverage.profdata")
-# BINARY=$(find . -path "*${PRODUCT_NAME}.app/${PRODUCT_NAME}")
+# find profdata and binary
+PROFDATA=$(find . -name "Coverage.profdata")
+BINARY=$(find . -path "*${PRODUCT_NAME}.app/${PRODUCT_NAME}")
 
-# # check if we have profdata file
-# if [[ -z $PROFDATA ]]; then
-# echo "ERROR: Unable to find Coverage.profdata. Be sure to execute tests before running this script."
-# exit 1
-# fi
+# check if we have profdata file
+if [[ -z $PROFDATA ]]; then
+echo "ERROR: Unable to find Coverage.profdata. Be sure to execute tests before running this script."
+exit 1
+fi
 
-# # extract coverage data from project using xcode native tool
-# xcrun --run llvm-cov show -instr-profile=${PROFDATA} ${BINARY} > sonarqube-coverage.report
+# extract coverage data from project using xcode native tool
+xcrun --run llvm-cov show -instr-profile=${PROFDATA} ${BINARY} > sonarqube-coverage.report
 
 # # run sonar scanner and upload coverage data with the current app version
 # sonar-scanner \
