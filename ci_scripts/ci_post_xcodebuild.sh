@@ -1,4 +1,4 @@
-cd $CI_WORKSPACE
+cd $CI_PROJECT_FILE_PATH
 
 # declare variables
 SCHEME=DemoXcodeCloud
@@ -10,7 +10,7 @@ APP_VERSION=$(sed -n '/MARKETING_VERSION/{s/MARKETING_VERSION = //;s/;//;s/^[[:s
 # clean, build and test project
 xcodebuild \
 -project ${PROJECT_NAME}.xcodeproj \
--destination 'platform=iOS Simulator,name=iPad (10th generation),OS=latest' \
+-destination 'platform=iOS Simulator,name=iPhone 15 Pro,OS=latest' \
 -scheme ${SCHEME} \
 -derivedDataPath DerivedData/ \
 -enableCodeCoverage YES \
