@@ -16,15 +16,15 @@ SCHEME="DemoXcodeCloud"
 PRODUCT_NAME="DemoXcodeCloud"
 PROJECT_NAME="DemoXcodeCloud"
 
-# Extract app version using agvtool
-APP_VERSION=$(agvtool what-marketing-version -terse1 || { echo "ERROR: Failed to retrieve APP_VERSION"; exit 1; })
+# # Extract app version using agvtool
+# APP_VERSION=$(agvtool what-marketing-version -terse1 || { echo "ERROR: Failed to retrieve APP_VERSION"; exit 1; })
 
-# Verify APP_VERSION
-if [[ -z "$APP_VERSION" ]]; then
-  echo "ERROR: APP_VERSION is empty"
-  exit 1
-fi
-echo "App Version: $APP_VERSION"
+# # Verify APP_VERSION
+# if [[ -z "$APP_VERSION" ]]; then
+#   echo "ERROR: APP_VERSION is empty"
+#   exit 1
+# fi
+# echo "App Version: $APP_VERSION"
 
 # Clean, build, and test project
 xcodebuild \
