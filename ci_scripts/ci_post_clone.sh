@@ -1,1 +1,1 @@
-# brew install sonar-scanner
+brew install sonar-scanner
