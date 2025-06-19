@@ -4,10 +4,10 @@
 set -e
 
 # Navigate to the project directory
-cd "$CI_PROJECT_FILE_PATH" || { echo "ERROR: Failed to cd to $CI_PROJECT_FILE_PATH"; exit 1; }
+cd "$CI_PRIMARY_REPOSITORY_PATH" || { echo "ERROR: Failed to cd to $CI_PRIMARY_REPOSITORY_PATH"; exit 1; }
 
 # Debug: Show current directory and contents
-echo "CI_PROJECT_FILE_PATH: $CI_PROJECT_FILE_PATH"
+echo "CI_PRIMARY_REPOSITORY_PATH: $CI_PRIMARY_REPOSITORY_PATH"
 echo "Current directory: $PWD"
 ls -la
 
