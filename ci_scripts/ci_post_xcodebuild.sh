@@ -27,3 +27,6 @@ xcodebuild \
 -resultBundlePath DerivedData/Logs/Test/ResultBundle.xcresult \
 clean build test
 
+# Run slather
+echo "Start run slather"
+fastlane slather
