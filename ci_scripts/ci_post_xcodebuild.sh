@@ -1,31 +1,35 @@
-# #!/bin/sh
-# set -e
+cd $CI_WORKSPACE
 
-# echo "duydl>> Danh sách file trong thư mục hiện tại:"
-# ls -la
-# echo "CI_WORKSPACE: $CI_WORKSPACE"
-# echo "CI_DERIVED_DATA_PATH: $CI_DERIVED_DATA_PATH"
+# declare variables
+SCHEME=DemoXcodeCloud
+PRODUCT_NAME=DemoXcodeCloud
+PROJECT_NAME=DemoXcodeCloud
+WORKSPACE_NAME=${PRODUCT_NAME}.xcworkspace
+APP_VERSION=$(sed -n '/MARKETING_VERSION/{s/MARKETING_VERSION = //;s/;//;s/^[[:space:]]*//;p;q;}' ./${PRODUCT_NAME}.xcodeproj/project.pbxproj)
 
-# cd $CI_PRIMARY_REPOSITORY_PATH
+# clean, build and test project
+xcodebuild \
+-project ${PROJECT_NAME}.xcodeproj \
+-destination 'platform=iOS Simulator,name=iPad (10th generation),OS=latest' \
+-scheme ${SCHEME} \
+-derivedDataPath DerivedData/ \
+-enableCodeCoverage YES \
+-resultBundlePath DerivedData/Logs/Test/ResultBundle.xcresult \
+clean build test
 
-# xcodebuild test \
-# -project DemoXcodeCloud.xcodeproj \
-# -scheme DemoXcodeCloud \
-# -destination 'platform=iOS Simulator,OS=18.3.1,name=iPhone 16' \
-# -enableCodeCoverage YES
+# # find profdata and binary
+# PROFDATA=$(find . -name "Coverage.profdata")
+# BINARY=$(find . -path "*${PRODUCT_NAME}.app/${PRODUCT_NAME}")
 
-# if ! command -v slather &> /dev/null; then
-#     echo "duydl>> Install slather"
-#     # bundle install
-#     gem install slather
-#     #brew install slather
+# # check if we have profdata file
+# if [[ -z $PROFDATA ]]; then
+# echo "ERROR: Unable to find Coverage.profdata. Be sure to execute tests before running this script."
+# exit 1
 # fi
 
-# slather coverage --sonarqube-xml
+# # extract coverage data from project using xcode native tool
+# xcrun --run llvm-cov show -instr-profile=${PROFDATA} ${BINARY} > sonarqube-coverage.report
 
-# # mkdir -p $CI_DERIVED_DATA_PATH/artifacts
-# # cp -r ./coverage-report $CI_DERIVED_DATA_PATH/artifacts/
-
-# echo "duydl>> Congrat generate report success!"
-
-# exit 0
+# # run sonar scanner and upload coverage data with the current app version
+# sonar-scanner \
+# -Dsonar.projectVersion=${APP_VERSION}
