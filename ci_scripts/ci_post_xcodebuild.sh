@@ -16,8 +16,8 @@ SCHEME="DemoXcodeCloud"
 PRODUCT_NAME="DemoXcodeCloud"
 PROJECT_NAME="DemoXcodeCloud"
 
-
 fastlane test
+sonar-scanner
 
 # # Clean, build, and test project
 # xcodebuild \
