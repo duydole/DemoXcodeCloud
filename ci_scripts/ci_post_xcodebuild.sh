@@ -1,21 +1,41 @@
-cd $CI_PROJECT_FILE_PATH
+#!/bin/bash
 
-# declare variables
-SCHEME=DemoXcodeCloud
-PRODUCT_NAME=DemoXcodeCloud
-PROJECT_NAME=DemoXcodeCloud
-WORKSPACE_NAME=${PRODUCT_NAME}.xcworkspace
-APP_VERSION=$(sed -n '/MARKETING_VERSION/{s/MARKETING_VERSION = //;s/;//;s/^[[:space:]]*//;p;q;}' ./${PRODUCT_NAME}.xcodeproj/project.pbxproj)
+# Exit on any error
+set -e
 
-# clean, build and test project
+# Navigate to the project directory
+cd "$CI_PROJECT_FILE_PATH" || { echo "ERROR: Failed to cd to $CI_PROJECT_FILE_PATH"; exit 1; }
+
+# Debug: Show current directory and contents
+echo "CI_PROJECT_FILE_PATH: $CI_PROJECT_FILE_PATH"
+echo "Current directory: $PWD"
+ls -la
+
+# Declare variables
+SCHEME="DemoXcodeCloud"
+PRODUCT_NAME="DemoXcodeCloud"
+PROJECT_NAME="DemoXcodeCloud"
+
+# Extract app version using agvtool
+APP_VERSION=$(agvtool what-marketing-version -terse1 || { echo "ERROR: Failed to retrieve APP_VERSION"; exit 1; })
+
+# Verify APP_VERSION
+if [[ -z "$APP_VERSION" ]]; then
+  echo "ERROR: APP_VERSION is empty"
+  exit 1
+fi
+echo "App Version: $APP_VERSION"
+
+# Clean, build, and test project
 xcodebuild \
--project ${PROJECT_NAME}.xcodeproj \
+-project "${PROJECT_NAME}.xcodeproj" \
 -destination 'platform=iOS Simulator,name=iPhone 15 Pro,OS=latest' \
--scheme ${SCHEME} \
+-scheme "${SCHEME}" \
 -derivedDataPath DerivedData/ \
 -enableCodeCoverage YES \
 -resultBundlePath DerivedData/Logs/Test/ResultBundle.xcresult \
 clean build test
+
 
 # # find profdata and binary
 # PROFDATA=$(find . -name "Coverage.profdata")
