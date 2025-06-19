@@ -27,19 +27,36 @@ xcodebuild \
 -resultBundlePath DerivedData/Logs/Test/ResultBundle.xcresult \
 clean build test
 
-# find profdata and binary
-PROFDATA=$(find . -name "Coverage.profdata")
-BINARY=$(find . -path "*${PRODUCT_NAME}.app/${PRODUCT_NAME}")
 
-# check if we have profdata file
-if [[ -z $PROFDATA ]]; then
-echo "ERROR: Unable to find Coverage.profdata. Be sure to execute tests before running this script."
-exit 1
+# Find profdata and binary
+PROFDATA=$(find DerivedData/Logs/Test -name "Coverage.profdata" | head -n 1)
+BINARY="./DerivedData/Build/Products/Debug-iphonesimulator/${PRODUCT_NAME}.app/${PRODUCT_NAME}"
+
+# Check if profdata file exists
+if [[ -z "$PROFDATA" || ! -f "$PROFDATA" ]]; then
+  echo "ERROR: Unable to find Coverage.profdata. Ensure tests are running and coverage is enabled."
+  exit 1
 fi
 
-# extract coverage data from project using xcode native tool
-xcrun --run llvm-cov show -instr-profile=${PROFDATA} ${BINARY} > sonarqube-coverage.report
+# Check if binary exists
+if [[ ! -f "$BINARY" ]]; then
+  echo "ERROR: Binary not found at $BINARY"
+  exit 1
+fi
 
-# # run sonar scanner and upload coverage data with the current app version
-# sonar-scanner \
-# -Dsonar.projectVersion=${APP_VERSION}
+# Debug: Inspect profdata and binary
+echo "PROFDATA: $PROFDATA"
+ls -lh "$PROFDATA"
+echo "BINARY: $BINARY"
+file "$BINARY"
+
+# Generate coverage report
+xcrun llvm-cov show -instr-profile="$PROFDATA" "$BINARY" > sonarqube-coverage.report
+
+# Verify the report was generated
+if [[ ! -s sonarqube-coverage.report ]]; then
+  echo "ERROR: Coverage report is empty or was not generated."
+  exit 1
+fi
+
+echo "Coverage report generated successfully: sonarqube-coverage.report"
