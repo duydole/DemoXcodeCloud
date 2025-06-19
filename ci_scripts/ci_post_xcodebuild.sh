@@ -29,13 +29,12 @@ PROJECT_NAME="DemoXcodeCloud"
 # Clean, build, and test project
 xcodebuild \
 -project "${PROJECT_NAME}.xcodeproj" \
--destination 'platform=iOS Simulator,name=iPhone 15 Pro,OS=latest' \
+-destination 'platform=iOS Simulator,name=iPhone 16,OS=18.3.1' \
 -scheme "${SCHEME}" \
 -derivedDataPath DerivedData/ \
 -enableCodeCoverage YES \
 -resultBundlePath DerivedData/Logs/Test/ResultBundle.xcresult \
 clean build test
-
 
 # # find profdata and binary
 # PROFDATA=$(find . -name "Coverage.profdata")
