@@ -1,0 +1,6 @@
+coverage_service: cobertura_xml
+xcodeproj: DemoXcodeCloud.xcodeproj
+scheme: DemoXcodeCloud
+output_directory: sonar-reports
+ignore:
+  - Pods/*
